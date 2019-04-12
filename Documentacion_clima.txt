@@ -1,0 +1,50 @@
+Documentacion del proyecto "Servicio de pronostico del clima con notificaciones por correo electronico"
+
+Presentado por: Oscar Rodríguez (2015-0075)
+
+------------------------------------------------ESPECIFICACIONES TÉCNICAS:------------------------------------------------
+
+	1. Para descargar python 3.4: 
+
+	sudo yum install wget -y
+	wget https://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
+	tar xf Python-3.* 
+	cd Python-3.*
+	sudo yum -y install @development
+	./configure
+	make
+	sudo make altinstall
+
+	1. Debe disponer de una maquina virtual con centOS
+
+	2. En el terminal del servidorque se va a utilisar, ejecutar el archivo de texto para descargar las librerias:
+
+				  ****yum install -r requirements.txt****
+
+	3. Modificar la variable ARCHIVO_PLANTILLA con la direccion del archivo plantilla.txt que fue descargado.
+
+	4. En el diccionario 'querystring', rellenar en el indice 'id' con el ID de la ciudad a monitorear. para mas
+	informacion sobre los ID's de las ciudades de los paises disponibles ir a https://openweathermap.org/.
+
+	5. Para almacenar los pronosticos generados en el servidor remoto via ftp, crear un directorio en el mismo con:
+
+				     **** mkdir 'nombre_directorio'****
+
+----------------------------------------------------MANUAL DEL USUARIO:----------------------------------------------------
+
+	1. Ir a https://openweathermap.org/ y crearse una cuenta.
+	
+	2. En la pagina principal de la cuenta, ir a la pestaña 'API keys' y copiar la llave que proporciona el sitio.
+	Pegar la llave en el diccionario 'querystring', en el indice 'APPID'.
+
+	3.  Si se esta usando una cuenta de Gmail, ir a la cuenta de google > seguridad > Acceso de aplicaciones poco
+	seguras> sí. Luego poner en el codigo la direccion del correo y contraseña.
+	
+	4. Para establecer la hora en la que los correos deberan enviarse diariamente, basta con modificar la funcion
+	schedule.every().day.at("HH:MM:SS").do(main)
+
+	4.  Este programa fue desarrollado en la version 3.4 de Python, por lo que al momento de correr el servicio de 
+	pronosticos, el servidor debera tener instalada esta version. para iniciar el programa, insertar el comando
+	siguiente en el terminal: 
+  
+					***** Python3.4 Clima.py *****
