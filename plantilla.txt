@@ -1,0 +1,12 @@
+Hola!
+
+Este es un mensaje para avisarte sobre el clima en ${FECHA}.
+
+Se prevee un pronostico de ${PRONOSTICO} con un porcentaje de nubosidad de ${NUBES}%.
+
+Los vientos tendrán una velocidad de ${WIND_SPEED} Km/h y una temperatura promedio de ${TEMP} C.
+
+Te exhortamos que insertes en tu mochila un ${ARTICULO}.
+
+Atentamente,
+SmartPack
